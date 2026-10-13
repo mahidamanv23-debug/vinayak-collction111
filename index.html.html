@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vinayk Collection | Oversized Streetwear</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f2ed;
+    color:#171717;
+}
+
+/* NAVBAR */
+nav{
+    height:75px;
+    background:#111;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#c9a878;
+}
+
+nav ul{
+    display:flex;
+    gap:32px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#c9a878;
+}
+
+.cart-btn{
+    cursor:pointer;
+    font-size:20px;
+}
+
+/* HERO */
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding:70px 8%;
+    background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero small{
+    letter-spacing:5px;
+}
+
+.hero h1{
+    font-size:clamp(55px,9vw,105px);
+    line-height:.9;
+    margin:25px 0;
+}
+
+.hero h1 span{
+    color:#d1b183;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    max-width:500px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:white;
+    color:#111;
+    padding:16px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c9a878;
+    color:white;
+}
+
+/* COMMON */
+section{
+    padding:90px 8%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title small{
+    color:#9b774d;
+    letter-spacing:4px;
+}
+
+.title h2{
+    font-size:42px;
+    margin-top:10px;
+}
+
+/* CATEGORIES */
+.categories{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.category{
+    height:400px;
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+}
+
+.category img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.category:hover img{
+    transform:scale(1.08);
+}
+
+.category-content{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:30px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+
+.category h3{
+    font-size:30px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.product{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product-image{
+    height:390px;
+    overflow:hidden;
+    background:#ddd;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product:hover img{
+    transform:scale(1.05);
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.product-info p{
+    color:#777;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.add{
+    float:right;
+    border:0;
+    background:#111;
+    color:white;
+    padding:10px 16px;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+.add:hover{
+    background:#9b774d;
+}
+
+/* BANNER */
+.banner{
+    min-height:400px;
+    display:flex;
+    align-items:center;
+    padding:60px 8%;
+    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+}
+
+.banner h2{
+    font-size:55px;
+    max-width:650px;
+}
+
+/* ABOUT */
+.about{
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+.about-content{
+    max-width:750px;
+    margin:auto;
+}
+
+.about h2{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#ccc;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* NEWSLETTER */
+.newsletter{
+    text-align:center;
+}
+
+.newsletter input{
+    width:320px;
+    max-width:80%;
+    padding:15px 20px;
+    border:1px solid #ccc;
+    border-radius:30px;
+    margin-top:20px;
+    outline:none;
+}
+
+.newsletter button{
+    padding:15px 25px;
+    border:none;
+    border-radius:30px;
+    background:#111;
+    color:white;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:35px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* CART */
+.cart{
+    position:fixed;
+    right:-420px;
+    top:0;
+    width:380px;
+    max-width:90%;
+    height:100vh;
+    background:white;
+    z-index:2000;
+    padding:30px;
+    box-shadow:-5px 0 25px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.cart.open{
+    right:0;
+}
+
+.close{
+    float:right;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.cart h2{
+    margin:10px 0 30px;
+}
+
+.cart-item{
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.total{
+    margin-top:25px;
+    font-size:21px;
+    font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .category{
+        height:350px;
+    }
+}
+
+@media(max-width:600px){
+
+    nav ul{
+        display:none;
+    }
+
+    nav{
+        padding:0 5%;
+    }
+
+    .hero{
+        min-height:80vh;
+        padding:50px 6%;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    section{
+        padding:65px 5%;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:450px;
+    }
+
+    .banner h2{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        VINAYK <span>COLLECTION</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <div class="cart-btn" onclick="openCart()">
+        🛒 <span id="count">0</span>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <small>VINAYK COLLECTION</small>
+
+        <h1>
+            WEAR<br>
+            <span>YOUR</span><br>
+            VIBE.
+        </h1>
+
+        <p>
+            Oversized. Comfortable. Aesthetic.
+            Discover modern streetwear made for your everyday style.
+        </p>
+
+        <a href="#shop" class="btn">
+            SHOP NOW →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section id="categories">
+
+    <div class="title">
+        <small>EXPLORE</small>
+        <h2>Shop By Style</h2>
+    </div>
+
+    <div class="categories">
+
+        <div class="category">
+
+            <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=85">
+
+            <div class="category-content">
+                <h3>Oversized</h3>
+                <p>Relaxed & comfortable</p>
+            </div>
+
+        </div>
+
+
+        <div class="category">
+
+            <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85">
+
+            <div class="category-content">
+                <h3>Streetwear</h3>
+                <p>Bold everyday looks</p>
+            </div>
+
+        </div>
+
+
+        <div class="category">
+
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85">
+
+            <div class="category-content">
+                <h3>Minimal</h3>
+                <p>Simple & clean</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="shop">
+
+    <div class="title">
+
+        <small>NEW DROP</small>
+
+        <h2>Oversized Collection</h2>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+        <div class="product">
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Classic Oversized Tee</h3>
+
+                <p>Heavy Cotton • White</p>
+
+                <span class="price">₹699</span>
+
+                <button class="add"
+                onclick="addCart('Classic Oversized Tee',699)">
+                    Add +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+        <div class="product">
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=85">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Urban Black Oversized</h3>
+
+                <p>Relaxed Fit • Black</p>
+
+                <span class="price">₹799</span>
+
+                <button class="add"
+                onclick="addCart('Urban Black Oversized',799)">
+                    Add +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+        <div class="product">
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Essential Hoodie</h3>
+
+                <p>Premium Feel • Grey</p>
+
+                <span class="price">₹1,299</span>
+
+                <button class="add"
+                onclick="addCart('Essential Hoodie',1299)">
+                    Add +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+        <div class="product">
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=85">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Street Oversized Fit</h3>
+
+                <p>Streetwear • Beige</p>
+
+                <span class="price">₹899</span>
+
+                <button class="add"
+                onclick="addCart('Street Oversized Fit',899)">
+                    Add +
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- BIG BANNER -->
+<section class="banner">
+
+    <h2>
+        NOT JUST CLOTHES.<br>
+        IT'S YOUR <i>VIBE.</i>
+    </h2>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <h2>VINAYK COLLECTION</h2>
+
+        <p>
+            We believe clothing should be comfortable,
+            simple and expressive. Vinayk Collection brings
+            oversized fits and modern streetwear together
+            for your everyday wardrobe.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+
+    <div class="title">
+
+        <small>JOIN VINAYK</small>
+
+        <h2>Stay Updated</h2>
+
+    </div>
+
+    <p>
+        Get updates about new drops and collections.
+    </p>
+
+    <input
+        type="email"
+        placeholder="Enter your email"
+        id="email">
+
+    <button onclick="subscribe()">
+        Subscribe
+    </button>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 <strong>Vinayk Collection</strong>
+        — All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- CART -->
+<div class="cart" id="cart">
+
+    <span class="close" onclick="closeCart()">×</span>
+
+    <h2>Your Cart 🛒</h2>
+
+    <div id="cartItems">
+        <p>Your cart is empty.</p>
+    </div>
+
+    <div class="total">
+        Total: ₹<span id="total">0</span>
+    </div>
+
+</div>
+
+
+<script>
+
+let cart = [];
+let total = 0;
+
+
+/* ADD TO CART */
+
+function addCart(name, price){
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    total += price;
+
+    document.getElementById("count").innerText =
+        cart.length;
+
+    updateCart();
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart(){
+
+    let box =
+        document.getElementById("cartItems");
+
+    if(cart.length === 0){
+
+        box.innerHTML =
+            "<p>Your cart is empty.</p>";
+
+        return;
+
+    }
+
+    box.innerHTML = "";
+
+    cart.forEach(function(item){
+
+        box.innerHTML += `
+            <div class="cart-item">
+                <strong>${item.name}</strong>
+                <br>
+                ₹${item.price}
+            </div>
+        `;
+
+    });
+
+    document.getElementById("total").innerText =
+        total;
+
+}
+
+
+/* OPEN CART */
+
+function openCart(){
+
+    document
+    .getElementById("cart")
+    .classList.add("open");
+
+}
+
+
+/* CLOSE CART */
+
+function closeCart(){
+
+    document
+    .getElementById("cart")
+    .classList.remove("open");
+
+}
+
+
+/* SUBSCRIBE */
+
+function subscribe(){
+
+    let email =
+        document.getElementById("email").value;
+
+    if(email === ""){
+
+        alert("Please enter your email.");
+
+    }else{
+
+        alert(
+            "Welcome to Vinayk Collection! 🎉"
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
